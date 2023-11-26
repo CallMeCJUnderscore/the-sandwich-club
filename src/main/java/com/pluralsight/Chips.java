@@ -3,7 +3,7 @@ package com.pluralsight;
 public class Chips implements Product{
     /*---------------VARIABLES---------------*/
 
-
+    private String flavor;
 
     /*--------------CONSTRUCTORS-------------*/
 
@@ -15,5 +15,8 @@ public class Chips implements Product{
 
     /*---------------FUNCTIONS---------------*/
 
-
+    @Override
+    public double getPrice() {
+        return 0;
+    }
 }

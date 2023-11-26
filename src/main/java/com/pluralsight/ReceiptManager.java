@@ -15,5 +15,7 @@ public class ReceiptManager {
 
     /*---------------FUNCTIONS---------------*/
 
+    public void saveReceipt (Order order){
 
+    }
 }

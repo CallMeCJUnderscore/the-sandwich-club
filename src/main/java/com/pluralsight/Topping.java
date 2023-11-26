@@ -3,7 +3,7 @@ package com.pluralsight;
 public abstract class Topping implements Product{
     /*---------------VARIABLES---------------*/
 
-
+    public String name;
 
     /*--------------CONSTRUCTORS-------------*/
 
@@ -15,5 +15,8 @@ public abstract class Topping implements Product{
 
     /*---------------FUNCTIONS---------------*/
 
-
+    @Override
+    public double getPrice() {
+        return 0;
+    }
 }

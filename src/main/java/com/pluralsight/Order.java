@@ -1,9 +1,13 @@
 package com.pluralsight;
 
+import java.util.List;
+
 public class Order {
     /*---------------VARIABLES---------------*/
 
-
+    List<Sandwich> sandwiches;
+    List<Drink> drinks;
+    List<Chips> chips;
 
     /*--------------CONSTRUCTORS-------------*/
 
@@ -15,5 +19,16 @@ public class Order {
 
     /*---------------FUNCTIONS---------------*/
 
+    public Sandwich orderSandwich(){
 
+        return null;
+    }
+
+    public Drink orderDrink(){
+        return null;
+    }
+
+    public Chips orderChips(){
+        return null;
+    }
 }
