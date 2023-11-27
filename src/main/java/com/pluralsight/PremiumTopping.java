@@ -13,6 +13,7 @@ public class PremiumTopping extends Topping{
 
     /*---------------FUNCTIONS---------------*/
 
-
-
+    public double getPrice() {
+        return super.getPrice();
+    }
 }

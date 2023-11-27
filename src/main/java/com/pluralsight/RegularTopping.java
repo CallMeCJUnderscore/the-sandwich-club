@@ -16,5 +16,7 @@ public class RegularTopping extends Topping{
 
     /*---------------FUNCTIONS---------------*/
 
-
+    public double getPrice() {
+        return super.getPrice();
+    }
 }

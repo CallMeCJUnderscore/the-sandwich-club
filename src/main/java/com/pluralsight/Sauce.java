@@ -15,5 +15,7 @@ public class Sauce extends Topping{
 
     /*---------------FUNCTIONS---------------*/
 
-
+    public double getPrice() {
+        return super.getPrice();
+    }
 }

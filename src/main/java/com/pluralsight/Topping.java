@@ -3,7 +3,7 @@ package com.pluralsight;
 public abstract class Topping implements Product{
     /*---------------VARIABLES---------------*/
 
-    public String name;
+    protected String name;
 
     /*--------------CONSTRUCTORS-------------*/
 
