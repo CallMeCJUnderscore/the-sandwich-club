@@ -4,14 +4,28 @@ package com.pluralsight;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
+        boolean run = true;
 
+        ReceiptManager receiptManager = new ReceiptManager();
+
+        List<Sandwich> sandwiches= new ArrayList<>();
+        List<Drink> drinks = new ArrayList<>();
+        List<Chips> chips = new ArrayList<>();
+        Order order = new Order(sandwiches, drinks, chips);
+
+
+
+        checkout(order, receiptManager);
+        //reset to main menu after this
     }
 
-    public void checkout(Order order, ReceiptManager receiptManager) {
+    public static void checkout(Order order, ReceiptManager receiptManager) {
         double total = 0.0;
         Scanner scanner = new Scanner(System.in);
         for (Sandwich sandwich : order.getSandwiches()) {
@@ -20,15 +34,15 @@ public class Program {
         for (Drink drink : order.getDrinks()) {
             total += drink.getPrice();
         }
-        for (Chips chips : order.getChips()) {
-            total += chips.getPrice();
+        for (Chips chip : order.getChips()) {
+            total += chip.getPrice();
         }
         System.out.printf("The total for the order is $%.2f.", total);
-        System.out.print("Do you agree to this price? (Y/N)");
+        System.out.print("\nDo you agree to this price? (Y/N) ");
         char command = scanner.nextLine().toUpperCase().charAt(0);
-        //TODO: Figure out how to handle rejecting order
         if (command == 'Y') {
-            receiptManager.saveReceipt(order);
+            System.out.println("Thank you! Creating receipt...");
+            receiptManager.saveReceipt(order, total);
         }
     }
 }
