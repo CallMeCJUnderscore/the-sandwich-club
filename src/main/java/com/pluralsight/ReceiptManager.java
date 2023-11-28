@@ -49,7 +49,75 @@ public class ReceiptManager {
             output = String.format("Total price: $%.2f", total);
             bufferedWriter.write(output);
                 for(Sandwich sandwich : order.getSandwiches()){
-                    output = String.format("%n%n ");
+                    output = String.format("%n%n%c Sandwich (%s) - %s Bread", sandwich.getSize(), sandwich.isToasted()?"Toasted":"Not Toasted", sandwich.getBreadType());
+                    bufferedWriter.write(output);
+
+                    for(Topping topping : sandwich.getToppings()){
+                        if(topping instanceof PremiumTopping premiumTopping){
+                            output = String.format("%n\t\t%s", premiumTopping.getName());
+                            bufferedWriter.write(output);
+                        }
+                    }
+
+                    switch (sandwich.getExtraMeat()) {
+                        case 'S' -> {
+                            output = "\n\t\tExtra Steak";
+                            bufferedWriter.write(output);
+                        }
+                        case 'H' -> {
+                            output = "\n\t\tExtra Ham";
+                            bufferedWriter.write(output);
+                        }
+                        case 'A' -> {
+                            output = "\n\t\tExtra Salami";
+                            bufferedWriter.write(output);
+                        }
+                        case 'R' -> {
+                            output = "\n\t\tExtra Roast Beef";
+                            bufferedWriter.write(output);
+                        }
+                        case 'C' -> {
+                            output = "\n\t\tExtra Chicken";
+                            bufferedWriter.write(output);
+                        }
+                        case 'B' -> {
+                            output = "\n\t\tExtra Bacon";
+                            bufferedWriter.write(output);
+                        }
+                    }
+
+                    switch (sandwich.getExtraCheese()) {
+                            case 'A' -> {
+                                output = "\n\t\tExtra American";
+                                bufferedWriter.write(output);
+                            }
+                            case 'P' -> {
+                                output = "\n\t\tExtra Provolone";
+                                bufferedWriter.write(output);
+                            }
+                            case 'C' -> {
+                                output = "\n\t\tExtra Cheddar";
+                                bufferedWriter.write(output);
+                            }
+                            case 'S' -> {
+                                output = "\n\t\tExtra Swiss";
+                                bufferedWriter.write(output);
+                            }
+                    }
+
+                    for(Topping topping : sandwich.getToppings()){
+                        if(topping instanceof RegularTopping regularTopping){
+                            output = String.format("%n\t\t%s", regularTopping.getName());
+                            bufferedWriter.write(output);
+                        }
+                    }
+                    for(Topping topping : sandwich.getToppings()){
+                        if(topping instanceof Sauce sauce){
+                            output = String.format("%n\t\t%s", sauce.getName());
+                            bufferedWriter.write(output);
+                        }
+                    }
+                    output = String.format("%nPrice: $%.2f", sandwich.getPrice());
                     bufferedWriter.write(output);
                 }
 
