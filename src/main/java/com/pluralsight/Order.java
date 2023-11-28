@@ -32,5 +32,33 @@ public class Order {
 
         List<String> toppings = chooseToppings(scanner);
         List<String> sauces = chooseSauces(scanner);
+
+        System.out.println("Would you like your sandwich toasted? (yes/no)");
+        String toastPreference = scanner.nextLine();
+
+        Sandwich sandwich = new customSandwich(size, breadType, toppings, sauces, toastPreference);
+
+        System.out.println("Sandwich added to the order!");
+    }
+    private List<String> chooseToppings(Scanner scanner) {
+        System.out.println("Choose your toppings (Enter 'DONE' when you're finished): ");
+        List<String> toppings = new ArrayList<>();
+        String topping;
+        do {
+            topping = scanner.nextLine();
+            if (!topping.equalsIgnoreCase("done")) {
+                topping.add(topping);
+            }
+        } while (!topping.equalsIgnoreCase("done"));
+        return toppings;
+
+    }
+    private List<String> chooseSauces(Scanner scanner) {
+        System.out.println("Choose sauces (Enter 'DONE' when you're finished):" );
+        List<String> sauces = new ArrayList<>();
+        String sauce; 
+
+
+
     }
 }
