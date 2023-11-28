@@ -56,9 +56,41 @@ public class Order {
     private List<String> chooseSauces(Scanner scanner) {
         System.out.println("Choose sauces (Enter 'DONE' when you're finished):" );
         List<String> sauces = new ArrayList<>();
-        String sauce; 
+        String sauce;
+        do {
+            sauce = scanner.nextLine();
+            if (!sauce.equalsIgnoreCase("done")) {
+                sauces.add(sauce);
+            }
+        } while (!sauce.equalsIgnoreCase("done"));
+        return sauces;
 
+            }
+            public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
+        }
 
+        public void addDrink(Drink drink) {
+        drinks.add(drink);
 
+    }
+    public void addChips(Chips chip) {
+        chips.add(chip);
+    }
+    public void removeItem(Item item) {
+        if (item instanceof Sandwich) {
+            sandwiches.remove(item);
+        } else if (item instanceof Drink) {
+            drinks.remove(item);
+        } else if (item instanceof Chips) {
+            chips.remove(item);
+    }
+
+        public String getOrderDetails() {
+            StringBuilder orderDetails = new StringBuilder("Order Details:\n");
+            orderDetails.append("Sandwiches:\n");
+            for (Sandwich sandwich : sandwiches) {
+                orderDetails.append("- ").append(sandwich.getDescription()).append("\n");
+            }
     }
 }
