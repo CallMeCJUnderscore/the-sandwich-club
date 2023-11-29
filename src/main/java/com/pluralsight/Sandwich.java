@@ -80,4 +80,10 @@ public class Sandwich implements Product{
     public double getPrice() {
         return 0;
     }
+
+    public char[] getDescription() {
+    }
+
+    public double calculatePrice() {
+    }
 }
