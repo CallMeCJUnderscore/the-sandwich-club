@@ -32,4 +32,7 @@ public class Chips implements Product{
     public double getPrice() {
         return 0;
     }
+
+    public char[] getDescription() {
+    }
 }

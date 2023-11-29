@@ -59,4 +59,7 @@ public class Drink implements Product{
 
         return price;
     }
+
+    public char[] getDescription() {
+    }
 }

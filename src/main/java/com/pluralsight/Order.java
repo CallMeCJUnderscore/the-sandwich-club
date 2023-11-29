@@ -23,9 +23,9 @@ public class Order {
         //createSandwich
         System.out.println("\nCreating a new sandwich: ");
 
-        System.out.println("Select the size of the sandwich(4\", 8\", or 12\"):");
-        int size = scanner.nextInt();
-        scanner.nextLine();
+        System.out.println("Select the size of the sandwich( S (4\"), M (8\"), or L (12\")):");
+        char size = scanner.nextLine().toUpperCase().charAt(0);
+
 
         System.out.println("Select the type of bread (white, wheat, rye, wrap):");
         String breadType = scanner.nextLine();
@@ -34,7 +34,7 @@ public class Order {
         List<String> sauces = chooseSauces(scanner);
 
         System.out.println("Would you like your sandwich toasted? (yes/no)");
-        String toastPreference = scanner.nextLine();
+        boolean toastPreference = Boolean.parseBoolean(scanner.nextLine()); //Toasted is boolean
 
         Sandwich sandwich = new customSandwich(size, breadType, toppings, sauces, toastPreference);
 
@@ -47,7 +47,11 @@ public class Order {
         do {
             topping = scanner.nextLine();
             if (!topping.equalsIgnoreCase("done")) {
-                topping.add(topping);
+                try {
+                    topping.wait(Long.parseLong(topping));
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         } while (!topping.equalsIgnoreCase("done"));
         return toppings;
@@ -77,16 +81,19 @@ public class Order {
     public void addChips(Chips chip) {
         chips.add(chip);
     }
-    public String removeItem(Item item) {
-        if (item instanceof Sandwich) {
-            sandwiches.remove(item);
-        } else if (item instanceof Drink) {
-            drinks.remove(item);
-        } else if (item instanceof Chips) {
-            chips.remove(item);
-        }
+    public void removeSandwich(Sandwich sandwich) {
+        sandwiches.remove(sandwich);
+    }
 
-        public String getOrderDetails () {
+    public void removeDrink(Drink drink) {
+        drinks.remove(drink);
+    }
+
+    public void removeChips(Chips chips) {
+        chips.remove(chips);
+    }
+
+        public String getOrderDetails() {
             StringBuilder orderDetails = new StringBuilder("Order Details:\n");
             orderDetails.append("Sandwiches:\n");
             for (Sandwich sandwich : sandwiches) {
@@ -107,9 +114,34 @@ public class Order {
         public double getTotalCost() {
             double totalCost = 0.0;
             for (Sandwich sandwich : sandwiches) {
-                totalCost 
+                totalCost += sandwich.calculatePrice();
             }
+            for (Drink drink : drinks) {
+                totalCost += drink.getPrice();
+
+            }
+            for (Chips chip : chips) {
+                totalCost += chip.getPrice();
+            }
+            return totalCost;
+            }
+        
+        public void displayOrderDetails() {
+            System.out.println(getOrderDetails());
         }
+
+        public void displayTotalCost() {
+            System.out.println("Total Cost: $" + getTotalCost());
+        }
+
+        // Josh adds the receipt stuff here
+
+
+    private String getTotalCost() {
     }
+
+    private int getOrderDetails() {
+    }
+
 
     }
