@@ -114,6 +114,29 @@ public class Order {
         String meatSelection = scanner.nextLine();
         char[] selectedMeats = meatSelection.toCharArray();
 
+
+        //Ask for extra meat
+
+        System.out.println("Would you like extra meat? (Y/N)");
+
+        String extraMeatChoice = scanner.nextLine();
+        boolean hasExtraMeat = extraMeatChoice.equalsIgnoreCase("Y");
+        double extraMeatCost = 0.0;
+
+        if (hasExtraMeat) {
+            if (sandwichSize == 4) {
+                extraMeatCost = 1.00; // for the 4-inch sandwich
+            } else if (sandwichSize == 8) {
+                extraMeatCost = 1.50; // for the 8-inch sandwich
+            } else if (sandwichSize == 12) {
+                extraMeatCost = 2.00; // for the 12-inch sandwich
+            }
+
+        }
+
+
+
+
         //ADDITIONAL TOPPINGS-Cheese
         System.out.println("Select meat toppings. Use a comma to seperate");
         System.out.println("A. American");
@@ -122,11 +145,11 @@ public class Order {
         System.out.println("S. Swiss");
 
         String cheeseSelection = scanner.nextLine();
-        char[] selectedCheesees = cheeseSelection.toCharArray();
+        char[] selectedCheeses = cheeseSelection.toCharArray();
 
 
-        /*1. Ask for meat choice
-        2. Ask for extra meat
+        /* CHECK 1. Ask for meat choice
+        CHECK 2. Ask for extra meat
         3. Ask for cheese
         4. Ask for extra cheese
 
@@ -150,18 +173,7 @@ public class Order {
                /* Drink newDrink = new Drink();
 
                 switch (sizeChoice) {
-                    case 'S':
-                        newDrink.setSize(DrinkSize.SMALL);
-                        break;
-                    case 'M':
-                        newDrink.setSize(DrinkSize.SMALL);
-                        break;
-                    case 'L':
-                        newDrink.setSize(DrinkSize.LARGE);
-                        break;
-                    default:
-                        newDrink.setSize(DrinkSize.MEDIUM);
-                        break;
+
                 }
                 return new Drink();*/
 
