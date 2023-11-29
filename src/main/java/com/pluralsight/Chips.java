@@ -35,4 +35,7 @@ public class Chips implements Product{
 
     public char[] getDescription() {
     }
+
+    public void remove(Chips chips) {
+    }
 }

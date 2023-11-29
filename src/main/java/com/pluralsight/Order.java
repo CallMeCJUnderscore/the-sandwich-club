@@ -13,7 +13,7 @@ public class Order {
 
     /*--------------CONSTRUCTORS-------------*/
 
-    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
+    public Order(List<Sandwich> sandwiches, List<Drink>  "drinks, List<Chips> chips) {
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
@@ -111,22 +111,8 @@ public class Order {
             return orderDetails.toString();
 
         }
-        public double getTotalCost() {
-            double totalCost = 0.0;
-            for (Sandwich sandwich : sandwiches) {
-                totalCost += sandwich.calculatePrice();
-            }
-            for (Drink drink : drinks) {
-                totalCost += drink.getPrice();
 
-            }
-            for (Chips chip : chips) {
-                totalCost += chip.getPrice();
-            }
-            return totalCost;
-            }
-        
-        public void displayOrderDetails() {
+    public void displayOrderDetails() {
             System.out.println(getOrderDetails());
         }
 
@@ -137,11 +123,11 @@ public class Order {
         // Josh adds the receipt stuff here
 
 
-    private String getTotalCost() {
+    private Object getTotalCost() {
+        return null;
     }
 
-    private int getOrderDetails() {
-    }
+
 
 
     }
