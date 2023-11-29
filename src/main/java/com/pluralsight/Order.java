@@ -18,7 +18,7 @@ public class Order {
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
 
-    }
+
     public void createSandwich(Scanner scanner) {
         //createSandwich
         System.out.println("\nCreating a new sandwich: ");
