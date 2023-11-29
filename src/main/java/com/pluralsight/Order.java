@@ -106,7 +106,7 @@ public class Order {
 
         }
         //ASK FOR MEAT CHOICE
-        System.out.println("Select meat toppings. Use a comma to separate");
+        System.out.println("Select meat toppings. Use a comma to seperate");
         System.out.println("S. Steak");
         System.out.println("H. Ham");
         System.out.println("A. Salami");
