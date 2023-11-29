@@ -86,25 +86,25 @@ public class Order {
         System.out.println("M 8\"");
         System.out.println("L 12\"");
         char sizeChoice = scanner.next().toUpperCase().charAt(0);
-        int sandwichSize; /*THIS SHOULD BE AN INT*/
+        int sandwichSize;
 
         switch (sizeChoice) {
-            case 1: /*FIX CASES*/
-                sandwichSize = Integer.parseInt("4\"");
+            case 'S': // FIX CASES
+                sandwichSize = 4;
                 break;
-            case 2:
-                sandwichSize = Integer.parseInt("8\"");
+            case 'M':
+                sandwichSize = 8;
                 break;
-
-            case 3:
-                sandwichSize = Integer.parseInt("12\"");
+            case 'L':
+                sandwichSize = 12;
                 break;
             default:
-                sandwichSize = Integer.parseInt("8\"");
-                //using the default to choose 8\" if invalid choice is Made
+                sandwichSize = 8; // using the default to choose 8" if an invalid choice is made
                 break;
 
         }
+        scanner.nextLine(); //only to consume the newline character
+
         //ASK FOR MEAT CHOICE
         System.out.println("Select meat toppings. Use a comma to seperate");
         System.out.println("S. Steak");
@@ -138,7 +138,7 @@ public class Order {
 
 
         //ADDITIONAL TOPPINGS-Cheese
-        System.out.println("Select meat toppings. Use a comma to seperate");
+        System.out.println("Select meat toppings. Use a comma to separate");
         System.out.println("A. American");
         System.out.println("P. Provolone");
         System.out.println("C. Cheddar");
@@ -146,7 +146,45 @@ public class Order {
 
         String cheeseSelection = scanner.nextLine();
         char[] selectedCheeses = cheeseSelection.toCharArray();
+        System.out.println("Would you like extra cheese? (Y/N)");
+        String extraCheeseChoice = scanner.nextLine();
+        boolean hasExtraCheese = extraCheeseChoice.equalsIgnoreCase("Y");
 
+        double extraCheeseCost = 0.0;
+        if (hasExtraCheese) {
+            if (sandwichSize == 4) {
+                extraCheeseCost = 0.30;
+            } else if (sandwichSize == 8) {
+                extraCheeseCost = 1.50;
+            } else if (sandwichSize == 12) {
+                extraCheeseCost = 2.25;
+            }
+        }
+
+        // Calculate the total price including extra cheese
+        double price = 0;
+        double totalPrice = price;
+        if (hasExtraCheese) {
+            totalPrice += extraCheeseCost;
+        }
+
+        // Create the sandwich object with extra cheese information
+        Sandwich sandwich = new Sandwich(breadType, sandwichSize, totalPrice, selectedMeats, selectedCheeses,
+                selectedOtherToppings, selectedSauces, isToasted, hasExtraCheese, extraCheeseCost);
+
+        return sandwich;
+
+        System.out.println("Select sauce toppings. Use a comma to separate");
+        System.out.println("M. Mayo");
+        System.out.println("R. Ranch");
+        System.out.println("K. Ketchup");
+        String sauceSelection = scanner.nextLine();
+        char[] selectedSauces = sauceSelection.toCharArray();
+
+        // Ask if the user wants it toasted
+        System.out.println("Would you like the sandwich toasted? (Y/N)");
+        String toastedChoice = scanner.nextLine();
+        boolean isToasted = toastedChoice.equalsIgnoreCase("Y");
 
         /* CHECK 1. Ask for meat choice
         CHECK 2. Ask for extra meat
@@ -181,7 +219,7 @@ public class Order {
     }
 
     public void orderChips() {
-        //Prompt for flavor, then add Chip object to orderedChips
+            Scanner scanner = new Scanner(System.in);
 
     }
 
