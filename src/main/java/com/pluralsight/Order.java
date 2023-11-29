@@ -49,11 +49,6 @@ public class Order {
 
     /*---------------FUNCTIONS---------------*/
 
-    public void createSandwich(Scanner scanner) {    /*DELETE THIS*/
-        //createSandwich
-        System.out.println("\nCreating a new sandwich: ");
-
-    }
 
     public void orderSandwich() {
         Scanner scanner = new Scanner(System.in);
@@ -91,26 +86,45 @@ public class Order {
         System.out.println("M 8\"");
         System.out.println("L 12\"");
         char sizeChoice = scanner.next().toUpperCase().charAt(0);
-        String sandwichSize; /*THIS SHOULD BE AN INT*/
-        double price;
+        int sandwichSize; /*THIS SHOULD BE AN INT*/
 
         switch (sizeChoice) {
             case 1: /*FIX CASES*/
-                sandwichSize = "4\"";
+                sandwichSize = Integer.parseInt("4\"");
                 break;
             case 2:
-                sandwichSize = "8\"";
+                sandwichSize = Integer.parseInt("8\"");
                 break;
 
             case 3:
-                sandwichSize = "12\"";
+                sandwichSize = Integer.parseInt("12\"");
                 break;
             default:
-                sandwichSize = "8\"";
+                sandwichSize = Integer.parseInt("8\"");
                 //using the default to choose 8\" if invalid choice is Made
                 break;
 
         }
+        //ASK FOR MEAT CHOICE
+        System.out.println("Select meat toppings. Use a comma to seperate");
+        System.out.println("S. Steak");
+        System.out.println("H. Ham");
+        System.out.println("A. Salami");
+
+        String meatSelection = scanner.nextLine();
+        char[] selectedMeats = meatSelection.toCharArray();
+
+        //ADDITIONAL TOPPINGS-Cheese
+        System.out.println("Select meat toppings. Use a comma to seperate");
+        System.out.println("A. American");
+        System.out.println("P. Provolone");
+        System.out.println("C. Cheddar");
+        System.out.println("S. Swiss");
+
+        String cheeseSelection = scanner.nextLine();
+        char[] selectedCheesees = cheeseSelection.toCharArray();
+
+
         /*1. Ask for meat choice
         2. Ask for extra meat
         3. Ask for cheese
