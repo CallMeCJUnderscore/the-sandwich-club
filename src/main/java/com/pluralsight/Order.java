@@ -63,8 +63,18 @@ public class Order {
                 price = 5.50;
                 break;
             case 2:
-                sandwichSize = "4\"";
-                price = 5.50;
+                sandwichSize = "8\"";
+                price = 7.00;
+                break;
+
+            case 3:
+                sandwichSize = "12\"";
+                price = 8.50;
+                break;
+            default:
+                sandwichSize = "8\"";
+                //using the default to choose 8\" if invalid choice is Made
+                price = 7.00;
                 break;
 
         }
