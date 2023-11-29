@@ -77,20 +77,39 @@ public class Order {
     public void addChips(Chips chip) {
         chips.add(chip);
     }
-    public void removeItem(Item item) {
+    public String removeItem(Item item) {
         if (item instanceof Sandwich) {
             sandwiches.remove(item);
         } else if (item instanceof Drink) {
             drinks.remove(item);
         } else if (item instanceof Chips) {
             chips.remove(item);
-    }
+        }
 
-        public String getOrderDetails() {
+        public String getOrderDetails () {
             StringBuilder orderDetails = new StringBuilder("Order Details:\n");
             orderDetails.append("Sandwiches:\n");
             for (Sandwich sandwich : sandwiches) {
                 orderDetails.append("- ").append(sandwich.getDescription()).append("\n");
             }
+            orderDetails.append("Drinks:\n");
+            for (Drink drink : drinks) {
+                orderDetails.append("- ").append(drink.getDescription()).append("\n");
+
+            }
+            orderDetails.append("Chips:\n");
+            for (Chips chip : chips) {
+                orderDetails.append("- ").append(chip.getDescription()).append("\n");
+            }
+            return orderDetails.toString();
+
+        }
+        public double getTotalCost() {
+            double totalCost = 0.0;
+            for (Sandwich sandwich : sandwiches) {
+                totalCost 
+            }
+        }
     }
-}
+
+    }
