@@ -32,7 +32,7 @@ public class Program {
                             createChips();
                             break;
                         case 4:
-                            receiptManager.saveReceipt(); //This wants the Order object, and then the Total of the order
+                           // receiptManager.saveReceipt(); //This wants the Order object, and then the Total of the order
                             break;
                         case 5:
                             quit = true;
