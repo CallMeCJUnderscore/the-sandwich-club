@@ -8,7 +8,7 @@ public class Chips implements Product{
     /*--------------CONSTRUCTORS-------------*/
 
     public Chips(String flavor) {
-//    Flavors:
+      Flavors:
 //    Classic
 //    Honey BBQ
 //    Salt & Vinegar
@@ -30,12 +30,6 @@ public class Chips implements Product{
 
     @Override
     public double getPrice() {
-        return 0;
+        return 1.50;
     }
-
-    public char[] getDescription() {
-    }
-
-    public void remove(Chips chips) {
-    }
-}
+  }
