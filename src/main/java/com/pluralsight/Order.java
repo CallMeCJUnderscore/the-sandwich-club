@@ -51,5 +51,21 @@ public class Order {
         //To Choose the sandwich size
         System.out.println("Select sandwich size: ");
         System.out.println("S 4\"");
-        
+        System.out.println("M 8\"");
+        System.out.println("L 12\"");
+        char sizeChoice = scanner.next().toUpperCase().charAt(0);
+        String sandwichSize;
+        double price;
+
+        switch (sizeChoice) {
+            case 1:
+                sandwichSize = "4\"";
+                price = 5.50;
+                break;
+            case 2:
+                sandwichSize = "4\"";
+                price = 5.50;
+                break;
+
+        }
 }
