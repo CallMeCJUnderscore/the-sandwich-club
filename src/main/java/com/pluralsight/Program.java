@@ -11,6 +11,8 @@ public class Program {
 
                 Scanner scanner = new Scanner(System.in);
                 boolean quit = false;
+                ReceiptManager receiptManager = new ReceiptManager();
+
 
                 while (!quit) {
                     displayHeader();
@@ -30,7 +32,7 @@ public class Program {
                             createChips();
                             break;
                         case 4:
-                            saveReceipt();
+                            receiptManager.saveReceipt(); //This wants the Order object, and then the Total of the order
                             break;
                         case 5:
                             quit = true;
@@ -65,9 +67,9 @@ public class Program {
     // Implement the goBack() method to handle going back in the application flow
 
 
-    private static void saveReceipt() {
+/*    private static void saveReceipt() {       NOT NEEDED
 
-    }
+    }*/
 
     private static void createChips() {
     }
