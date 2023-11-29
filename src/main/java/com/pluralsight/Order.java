@@ -31,4 +31,25 @@ public class Order {
         int breadChoice = scanner.nextInt();
         String breadType;
         switch (breadChoice) {
+            case 1:
+                breadType = "White";
+                break;
+            case 2:
+                breadType = "Wheat";
+                break;
+            case 3:
+                breadType = "Rye";
+                break;
+            case 4:
+                breadType = "Wrap";
+                break;
+            default:
+                breadType = "White"; // using the default to choose white if invalid choice is Made
+                break;
+        }
+
+        //To Choose the sandwich size
+        System.out.println("Select sandwich size: ");
+        System.out.println("S 4\"");
+        
 }
