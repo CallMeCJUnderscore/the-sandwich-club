@@ -13,14 +13,22 @@ public class Order {
 
     /*--------------CONSTRUCTORS-------------*/
 
-    public Order(List<Sandwich> sandwiches, List<Drink>drinks, List<Chips> chips {
+    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
+    }
+
+
+    public void createSandwich(Scanner scanner) {
+        //createSandwich
+        System.out.println("\nCreating a new sandwich: ");
 
     }
-    public Sandwich orderSandwich() {
+
+    public void orderSandwich() {
         Scanner scanner = new Scanner(System.in);
+
 
         // Get bread type
         System.out.println("Select your bread:");
@@ -60,22 +68,50 @@ public class Order {
         switch (sizeChoice) {
             case 1:
                 sandwichSize = "4\"";
-                price = 5.50;
                 break;
             case 2:
                 sandwichSize = "8\"";
-                price = 7.00;
                 break;
 
             case 3:
                 sandwichSize = "12\"";
-                price = 8.50;
                 break;
             default:
                 sandwichSize = "8\"";
                 //using the default to choose 8\" if invalid choice is Made
-                price = 7.00;
                 break;
 
         }
+    }
+
+    public void orderDrink() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select Drink Size");
+        System.out.println("S. Small ");
+        System.out.println("M. Medium ");
+        System.out.println("L. Large ");
+        char sizeChoice = scanner.next().toUpperCase().charAt(0);
+
+               /* Drink newDrink = new Drink();
+
+                switch (sizeChoice) {
+                    case 'S':
+                        newDrink.setSize(DrinkSize.SMALL);
+                        break;
+                    case 'M':
+                        newDrink.setSize(DrinkSize.SMALL);
+                        break;
+                    case 'L':
+                        newDrink.setSize(DrinkSize.LARGE);
+                        break;
+                    default:
+                        newDrink.setSize(DrinkSize.MEDIUM);
+                        break;
+                }
+                return new Drink();*/
+
+    }
+
+
 }
+
