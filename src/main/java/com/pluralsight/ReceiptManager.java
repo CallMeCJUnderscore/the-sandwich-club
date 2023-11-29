@@ -48,7 +48,7 @@ public class ReceiptManager {
             bufferedWriter.newLine();
             output = String.format("Total price: $%.2f", total);
             bufferedWriter.write(output);
-                for(Sandwich sandwich : order.getSandwiches()){
+                for(Sandwich sandwich : order.getOrderedSandwiches()){
                     output = String.format("%n%n%c Sandwich (%s) - %s Bread", sandwich.getSize(), sandwich.isToasted()?"Toasted":"Not Toasted", sandwich.getBreadType());
                     bufferedWriter.write(output);
 
@@ -121,12 +121,12 @@ public class ReceiptManager {
                     bufferedWriter.write(output);
                 }
 
-                for(Drink drink : order.getDrinks()){
-                    output = String.format("%n%n%c drink - %s Flavor%nPrice: $%.2f", drink.getSize(), drink.getFlavor(), drink.getPrice());
+                for(Drink drink : order.getOrderedDrinks()){
+                    output = String.format("%n%n%s drink - %s Flavor%nPrice: $%.2f", drink.getSize(), drink.getFlavor(), drink.getPrice());
                     bufferedWriter.write(output);
                 }
 
-                for(Chips chip : order.getChips()){
+                for(Chips chip : order.getOrderedChips()){
                     output = String.format("%n%nChip bag - %s Flavor%nPrice: $%.2f", chip.getFlavor(), chip.getPrice());
                     bufferedWriter.write(output);
                 }

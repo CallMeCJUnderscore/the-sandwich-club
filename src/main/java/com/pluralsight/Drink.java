@@ -3,23 +3,23 @@ package com.pluralsight;
 public class Drink implements Product{
     /*---------------VARIABLES---------------*/
 
-    public String size;
+    public char size;
     public String flavor;
 
     /*--------------CONSTRUCTORS-------------*/
 
-    public Drink(String size, String flavor) {
+    public Drink(char size, String flavor) {
         this.size = size;
         this.flavor = flavor;
     }
 
     /*------------GETTERS/SETTERS------------*/
 
-    public String getSize() {
+    public char getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(char size) {
         this.size = size;
     }
 
@@ -42,24 +42,20 @@ public class Drink implements Product{
 
         // Assign the price based on the size of the drink
         double price = 0.0;
-        switch (size.toUpperCase()) {
-            case "S":
+        switch (size) {
+            case 'S':
                 price = smallPrice;
                 break;
-            case "M":
+            case 'M':
                 price = mediumPrice;
                 break;
-            case "L":
+            case 'L':
                 price = largePrice;
                 break;
             default:
                 System.out.println("Invalid size");
         }
-
-
         return price;
     }
-
-
-    }
+}
 

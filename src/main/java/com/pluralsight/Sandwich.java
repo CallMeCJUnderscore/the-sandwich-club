@@ -78,12 +78,11 @@ public class Sandwich implements Product{
     /*---------------FUNCTIONS---------------*/
     @Override
     public double getPrice() {
+        //1. Create a double to hold the price of the sandwich
+        //2. Determine the starting price of the sandwich (hint: SIZE)
+        //3. Add the value of every topping to the price (HINT: Every topping has a getPrice method that can be called, but some of them are not complete)
+        //4. Check if they ordered extra meat or cheese, and add it to the price
+        //5. Return the price
         return 0;
-    }
-
-    public char[] getDescription() {
-    }
-
-    public double calculatePrice() {
     }
 }
