@@ -97,12 +97,18 @@ public class Drink implements Product{
 
         // assign the price based on the size of the drink
         double price = 0.0;
-
-        switch (size) {
-            case 'S' -> price = smallPrice;
-            case 'M' -> price = mediumPrice;
-            case 'L' -> price = largePrice;
-            default -> System.out.println("Invalid size");
+        switch (this.size) {
+            case "S":
+                price = smallPrice;
+                break;
+            case "M":
+                price = mediumPrice;
+                break;
+            case "L":
+                price = largePrice;
+                break;
+            default:
+                System.out.println("Invalid size");
         }
         return price;
     }
