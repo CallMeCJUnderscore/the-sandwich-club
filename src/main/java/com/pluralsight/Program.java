@@ -7,26 +7,34 @@ import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-        // Existing imports and code...
 
                 Scanner scanner = new Scanner(System.in);
                 boolean quit = false;
                 ReceiptManager receiptManager = new ReceiptManager();
 
+                private static void displayMenu() {
+                    System.out.println("Order Menu:");
+                    System.out.println("1. Sandwich");
+                    System.out.println("2. Drink");
+                    System.out.println("3. Chips");
+                    System.out.println("4. Checkout");
+                    System.out.println("5. Quit");
+                    System.out.println("6. Go Back"); // Option to go back
+                    System.out.print("Select an option: ");
+
 
                 while (!quit) {
-                    displayHeader();
-                    displayMenu();
-
                     int choice = scanner.nextInt();
                     scanner.nextLine(); //  newline character
+                //HELP HERE: What am I supposed to put in these?
+                    Product item;
 
                     switch (choice) {
                         case 1:
-                            createSandwich();
+                           item = Sandwich.order();
                             break;
                         case 2:
-                            createDrink();
+                            Drink.order();
                             break;
                         case 3:
                             createChips();
@@ -49,45 +57,9 @@ public class Program {
                 scanner.close();
             }
 
-    private static void goBack() {
-    }
-
-    private static void displayMenu() {
-        System.out.println("Order Menu:");
-        System.out.println("1. Sandwich");
-        System.out.println("2. Drink");
-        System.out.println("3. Chips");
-        System.out.println("4. Checkout");
-        System.out.println("5. Quit");
-        System.out.println("6. Go Back"); // Option to go back
-        System.out.print("Select an option: ");
-    }
-
-    // Implement methods for creating sandwich, drink, chips, and generating receipt
-    // Implement the goBack() method to handle going back in the application flow
-
-
-/*    private static void saveReceipt() {       NOT NEEDED
-
-    }*/
-
-    private static void createChips() {
-    }
-
-    private static void createDrink() {
-
-    }
-
-    private static void createSandwich() {
-
-    }
-
-    private static void displayHeader() {
-                // Display header implementation
-            }
 
 
 
 
-    }
+
 
