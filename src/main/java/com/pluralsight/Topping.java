@@ -17,9 +17,6 @@ public abstract class Topping implements Product{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     /*---------------FUNCTIONS---------------*/
 
