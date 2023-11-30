@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sandwich implements Product{
+    public static Product order;
+
+
+
     /*---------------VARIABLES---------------*/
 
     public char size;
@@ -22,6 +26,10 @@ public class Sandwich implements Product{
         this.extraMeat = extraMeat;
         this.extraCheese = extraCheese;
         this.toppings = toppings;
+    }
+
+    public Sandwich(String breadType, char sandwichSize, double totalPrice,
+                    char[] selectedMeats, char[] selectedCheeses, List<Topping> selectedOtherToppings, Object selectedSauces, boolean isToasted, boolean hasExtraCheese, double extraCheeseCost) {
     }
 
 
@@ -78,7 +86,9 @@ public class Sandwich implements Product{
 
 
     public static Product order() {
-        //Add all of the sandwich Stuff
+        //Add all the sandwich Stuff
+        return null;
+    }
         public Sandwich orderSandwich() {
             Scanner scanner = new Scanner(System.in);
 
@@ -121,17 +131,18 @@ public class Sandwich implements Product{
             char sandwichSize;
 
             switch (sizeChoice) {
-                case 'S': // FIX CASES
-                    sandwichSize = 4;
+                case 'L':
+                    sandwichSize = 12;
                     break;
                 case 'M':
                     sandwichSize = 8;
                     break;
-                case 'L':
-                    sandwichSize = 12;
+                case 'S':
+                    sandwichSize = 4;
                     break;
                 default:
-                    sandwichSize = 8; // using the default to choose 8" if an invalid choice is made
+                    sandwichSize = 8;
+                 // using the default to choose 8" if an invalid choice is made
 
             }
             scanner.nextLine(); //only to consume the newline character
@@ -141,6 +152,9 @@ public class Sandwich implements Product{
             System.out.println("S. Steak");
             System.out.println("H. Ham");
             System.out.println("A. Salami");
+            System.out.println("R. Roast Beef");
+            System.out.println("C. Chicken");
+            System.out.println("B. Bacon");
 
             String meatSelection = scanner.nextLine();
             char[] selectedMeats = meatSelection.toCharArray();
@@ -190,25 +204,21 @@ public class Sandwich implements Product{
             }
 
             // Calculate the total price including extra cheese
-            double price = 0;
-            double totalPrice = price;
+            double price = 0.0;
             if (hasExtraCheese) {
-                totalPrice += extraCheeseCost;
+                double var10000 = price + extraCheeseCost;
             }
 
-            // Create the sandwich object with extra cheese information
-            Sandwich sandwich = new Sandwich(breadType, sandwichSize, totalPrice, selectedMeats, selectedCheeses,
-                    selectedOtherToppings, selectedSauces, isToasted, hasExtraCheese, extraCheeseCost);
-            //Filling in the remainder of the method that's why they're red
 
-            return sandwich;
+           new Object();
+            List<Topping> selectedOtherToppings = null;
+            char[] selectedSauce = cheeseSelection.toCharArray();
 
             System.out.println("Select sauce toppings. Use a comma to separate");
             System.out.println("M. Mayo");
             System.out.println("R. Ranch");
             System.out.println("K. Ketchup");
             String sauceSelection = scanner.nextLine();
-            char[] selectedSauces = sauceSelection.toCharArray();
 
             // Ask if the user wants it toasted
             System.out.println("Would you like the sandwich toasted? (Y/N)");
