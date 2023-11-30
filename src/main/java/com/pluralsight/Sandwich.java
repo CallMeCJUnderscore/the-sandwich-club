@@ -28,6 +28,10 @@ public class Sandwich implements Product{
         this.toppings = toppings;
     }
 
+    public Sandwich(String breadType, char sandwichSize, double totalPrice,
+                    char[] selectedMeats, char[] selectedCheeses, List<Topping> selectedOtherToppings, Object selectedSauces, boolean isToasted, boolean hasExtraCheese, double extraCheeseCost) {
+    }
+
 
 
     /*------------GETTERS/SETTERS------------*/
@@ -83,6 +87,7 @@ public class Sandwich implements Product{
 
     public static Product order() {
         //Add all the sandwich Stuff
+        return null;
     }
         public Sandwich orderSandwich() {
             Scanner scanner = new Scanner(System.in);
@@ -201,19 +206,19 @@ public class Sandwich implements Product{
                 totalPrice += extraCheeseCost;
             }
 
-            // Create the sandwich object with extra cheese information
-            Sandwich sandwich = new Sandwich(breadType, sandwichSize, totalPrice, selectedMeats, selectedCheeses,
-                    selectedOtherToppings, selectedSauces, isToasted, hasExtraCheese, extraCheeseCost);
-            //Filling in the remainder of the method that's why they're red
 
-            return sandwich;
+            Object selectedSauces = new Object();
+            List<Topping> selectedOtherToppings = null;
+
+
+
+            char[] selectedSauce = cheeseSelection.toCharArray();
 
             System.out.println("Select sauce toppings. Use a comma to separate");
             System.out.println("M. Mayo");
             System.out.println("R. Ranch");
             System.out.println("K. Ketchup");
             String sauceSelection = scanner.nextLine();
-            char[] selectedSauces = sauceSelection.toCharArray();
 
             // Ask if the user wants it toasted
             System.out.println("Would you like the sandwich toasted? (Y/N)");

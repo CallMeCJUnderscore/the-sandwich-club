@@ -8,6 +8,8 @@ import java.util.Scanner;
 import static com.pluralsight.Sandwich.order;
 
 public class Program {
+    public Program() {
+    }
     public static void main(String[] args) {
 
     }
@@ -26,31 +28,30 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         ReceiptManager receiptManager = new ReceiptManager();
+
         while (!quit) {
             int choice = scanner.nextInt();
             scanner.nextLine(); //  newline character
-            Product item;
+            Product var4;
 
             switch (choice) {
                 case 1:
-                    item = order();
+                    var4 = Sandwich.order();
                     break;
                 case 2:
-                    item = Drink.order();
+                    var4 = Drink.order();
                     break;
                 case 3:
-                    item = Chips.order();
+                    var4 = Chips.order();
                     break;
                 case 4:
-
-                    receiptManager.saveReceipt(order, order.getPrice());
-                    break;
+                    receiptManager.saveReceipt(Sandwich.order, Sandwich.order.getPrice());                    break;
                 case 5:
                     quit = true;
                     System.out.println("Program terminated.");
                     break;
                 case 6:
-                    goBack(); // the go backfunction
+                    goBack(); 
                     break;
                 default:
                     System.out.println("Invalid choice. Please select again.");

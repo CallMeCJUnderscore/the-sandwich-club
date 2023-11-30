@@ -26,7 +26,11 @@ public class Order {
 
     /*---------------FUNCTIONS---------------*/
 
+    public void orderedSandwiches() {
+    }
 
+        public void orderedDrinks() {
+    }
 
         /* CHECK 1. Ask for meat choice
         CHECK 2. Ask for extra meat
@@ -40,10 +44,7 @@ public class Order {
 
         //REMEMBER THE CLASS DIAGRAM
 
-//Move to Drink Class
-
-//Move to Chips
-    public void orderChips() {
+    public void orderedChips() {
             Scanner scanner = new Scanner(System.in);
 
     }
