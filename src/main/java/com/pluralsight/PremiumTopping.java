@@ -6,6 +6,9 @@ public class PremiumTopping extends Topping{
 
     /*--------------CONSTRUCTORS-------------*/
 
+    public PremiumTopping(String name) {
+        super(name);
+    }
 
     /*------------GETTERS/SETTERS------------*/
 

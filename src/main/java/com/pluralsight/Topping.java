@@ -7,7 +7,9 @@ public abstract class Topping implements Product{
 
     /*--------------CONSTRUCTORS-------------*/
 
-
+    public Topping(String name) {
+        this.name = name;
+    }
 
     /*------------GETTERS/SETTERS------------*/
 
