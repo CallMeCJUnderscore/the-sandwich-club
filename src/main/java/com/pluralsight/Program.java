@@ -51,7 +51,7 @@ public class Program {
                     System.out.println("Program terminated.");
                     break;
                 case 6:
-                    goBack(); 
+                    goBack();
                     break;
                 default:
                     System.out.println("Invalid choice. Please select again.");

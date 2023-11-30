@@ -53,18 +53,17 @@ public class Drink implements Product{
 
             String size;
             switch (sizeChoice) {
-                case 'S':
-                    size = "Small";
+                case 'L':
+                    size = "Large";
                     break;
                 case 'M':
                     size = "Medium";
                     break;
-                case 'L':
-                    size = "Large";
+                case 'S':
+                    size = "Small";
                     break;
                 default:
-                    size = "Small"; // Default to small if an invalid choice is made
-                    break;
+                    size = "Small";
             }
 
             System.out.println("Select drink flavor:");
@@ -74,8 +73,6 @@ public class Drink implements Product{
             int flavorChoice = scanner.nextInt();
 
             String flavor;
-
-            // Mapping user input to drink flavor as a string
             switch (flavorChoice) {
                 case 1:
                     flavor = "Coke";
@@ -94,14 +91,13 @@ public class Drink implements Product{
             return new Drink(size, flavor);
     }
         public double getPrice() {
-        // Define base prices for each size
-        double smallPrice = 2.0;
-        double mediumPrice = 2.5;
-        double largePrice = 3.0;
+            double smallPrice = 2.0;
+            double mediumPrice = 2.5;
+            double largePrice = 3.0;
 
-        // Assign the price based on the size of the drink
+        // assign the price based on the size of the drink
         double price = 0.0;
-        switch (size) {
+        switch (this.size) {
             case "S":
                 price = smallPrice;
                 break;
