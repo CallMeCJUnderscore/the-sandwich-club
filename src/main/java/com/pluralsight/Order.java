@@ -39,26 +39,9 @@ public class Order {
         Finally, add to orderedSandwiches*/
 
         //REMEMBER THE CLASS DIAGRAM
-    }
+
 //Move to Drink Class
-    public void orderDrink() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Select Drink Size");
-        System.out.println("S. Small ");
-        System.out.println("M. Medium ");
-        System.out.println("L. Large ");
-        char sizeChoice = scanner.next().toUpperCase().charAt(0);
-        //MAKE SURE THE DRINK GETS CREATED WITH CAPITAL LETTERS FOR SIZE
 
-               /* Drink newDrink = new Drink();
-
-                switch (sizeChoice) {
-
-                }
-                return new Drink();*/
-
-        //Prompt for flavor, then add Drink object to orderedDrinks
-    }
 //Move to Chips
     public void orderChips() {
             Scanner scanner = new Scanner(System.in);

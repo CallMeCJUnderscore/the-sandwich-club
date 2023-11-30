@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sandwich implements Product{
+    public static Product order;
+
+
+
     /*---------------VARIABLES---------------*/
 
     public char size;
@@ -78,7 +82,8 @@ public class Sandwich implements Product{
 
 
     public static Product order() {
-        //Add all of the sandwich Stuff
+        //Add all the sandwich Stuff
+    }
         public Sandwich orderSandwich() {
             Scanner scanner = new Scanner(System.in);
 
