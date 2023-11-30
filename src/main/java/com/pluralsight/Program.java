@@ -12,6 +12,7 @@ public class Program {
                 Scanner scanner = new Scanner(System.in);
                 boolean quit = false;
                 ReceiptManager receiptManager = new ReceiptManager();
+                Order order = new Order();
 
 
                 while (!quit) {
@@ -22,35 +23,23 @@ public class Program {
                     scanner.nextLine(); //  newline character
 
                     switch (choice) {
-                        case 1:
-                            createSandwich();
-                            break;
-                        case 2:
-                            createDrink();
-                            break;
-                        case 3:
-                            createChips();
-                            break;
-                        case 4:
-                            receiptManager.saveReceipt(); //This wants the Order object, and then the Total of the order
-                            break;
-                        case 5:
+                        case 1 -> order.orderSandwich(scanner);
+                        case 2 -> order.orderDrink(scanner);
+                        case 3 -> order.orderChips(scanner);
+                        case 4 -> {
+                            checkout(order, receiptManager);
+                            order = new Order();
+                        }
+                        case 5 -> {
                             quit = true;
                             System.out.println("Program terminated.");
-                            break;
-                        case 6:
-                            goBack(); // the go backfunction
-                            break;
-                        default:
-                            System.out.println("Invalid choice. Please select again.");
-                            break;
+                        }
+                        default -> System.out.println("Invalid choice. Please select again.");
                     }
                 }
                 scanner.close();
             }
 
-    private static void goBack() {
-    }
 
     private static void displayMenu() {
         System.out.println("Order Menu:");
@@ -59,7 +48,6 @@ public class Program {
         System.out.println("3. Chips");
         System.out.println("4. Checkout");
         System.out.println("5. Quit");
-        System.out.println("6. Go Back"); // Option to go back
         System.out.print("Select an option: ");
     }
 
@@ -83,10 +71,33 @@ public class Program {
     }
 
     private static void displayHeader() {
-                // Display header implementation
+        System.out.println("""
+                     _____ _          ___               _        _    _       ___ _      _   \s
+                    |_   _| |_  ___  / __| __ _ _ _  __| |_ __ _(_)__| |_    / __| |_  _| |__\s
+                      | | | ' \\/ -_) \\__ \\/ _` | ' \\/ _` \\ V  V / / _| ' \\  | (__| | || | '_ \\
+                      |_| |_||_\\___| |___/\\__,_|_||_\\__,_|\\_/\\_/|_\\__|_||_|  \\___|_|\\_,_|_.__/""");
             }
 
-
+    public static void checkout(Order order, ReceiptManager receiptManager) {
+        double total = 0.0;
+        Scanner scanner = new Scanner(System.in);
+        for (Sandwich sandwich : order.getOrderedSandwiches()) {
+            total += sandwich.getPrice();
+        }
+        for (Drink drink : order.getOrderedDrinks()) {
+            total += drink.getPrice();
+        }
+        for (Chips chip : order.getOrderedChips()) {
+            total += chip.getPrice();
+        }
+        System.out.printf("The total for the order is $%.2f.", total);
+        System.out.print("\nDo you agree to this price? (Y/N) ");
+        char command = scanner.nextLine().toUpperCase().charAt(0);
+        if (command == 'Y') {
+            System.out.println("Thank you! Creating receipt...");
+            receiptManager.saveReceipt(order, total);
+        }
+    }
 
 
     }

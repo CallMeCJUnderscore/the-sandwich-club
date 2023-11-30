@@ -98,6 +98,7 @@ public class Sandwich implements Product{
         System.out.println("3. Rye");
         System.out.println("4. Wrap");
         int breadChoice = scanner.nextInt();
+        scanner.nextLine();
         String breadType;
 
         switch (breadChoice) {

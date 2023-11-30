@@ -13,7 +13,7 @@ public class Order {
 
     /*--------------CONSTRUCTORS-------------*/
 
-    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
+    public Order() {
         this.orderedSandwiches = new ArrayList<>();
         this.orderedDrinks = new ArrayList<>();
         this.orderedChips = new ArrayList<>();
