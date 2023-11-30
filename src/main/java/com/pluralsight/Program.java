@@ -15,7 +15,7 @@ public class Program {
     }
 
     public static void displayMenu() {
-        System.out.println("Order Menu:");
+        System.out.println("The Sandwich Club Order Menu:");
         System.out.println("1. Sandwich");
         System.out.println("2. Drink");
         System.out.println("3. Chips");

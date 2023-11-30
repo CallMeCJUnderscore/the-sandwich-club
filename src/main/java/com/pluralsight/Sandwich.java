@@ -131,17 +131,18 @@ public class Sandwich implements Product{
             char sandwichSize;
 
             switch (sizeChoice) {
-                case 'S': // FIX CASES
-                    sandwichSize = 4;
+                case 'L':
+                    sandwichSize = 12;
                     break;
                 case 'M':
                     sandwichSize = 8;
                     break;
-                case 'L':
-                    sandwichSize = 12;
+                case 'S':
+                    sandwichSize = 4;
                     break;
                 default:
-                    sandwichSize = 8; // using the default to choose 8" if an invalid choice is made
+                    sandwichSize = 8;
+                 // using the default to choose 8" if an invalid choice is made
 
             }
             scanner.nextLine(); //only to consume the newline character
@@ -151,6 +152,9 @@ public class Sandwich implements Product{
             System.out.println("S. Steak");
             System.out.println("H. Ham");
             System.out.println("A. Salami");
+            System.out.println("R. Roast Beef");
+            System.out.println("C. Chicken");
+            System.out.println("B. Bacon");
 
             String meatSelection = scanner.nextLine();
             char[] selectedMeats = meatSelection.toCharArray();
@@ -200,18 +204,14 @@ public class Sandwich implements Product{
             }
 
             // Calculate the total price including extra cheese
-            double price = 0;
-            double totalPrice = price;
+            double price = 0.0;
             if (hasExtraCheese) {
-                totalPrice += extraCheeseCost;
+                double var10000 = price + extraCheeseCost;
             }
 
 
-            Object selectedSauces = new Object();
+           new Object();
             List<Topping> selectedOtherToppings = null;
-
-
-
             char[] selectedSauce = cheeseSelection.toCharArray();
 
             System.out.println("Select sauce toppings. Use a comma to separate");
