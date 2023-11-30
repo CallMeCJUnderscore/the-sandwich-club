@@ -16,6 +16,10 @@ public class Chips implements Product{
         this.flavor = flavor;
     }
 
+    public static Product order() {
+        return null;
+    }
+
     /*------------GETTERS/SETTERS------------*/
 
     public String getFlavor() {
