@@ -99,25 +99,14 @@ public class Sandwich implements Product{
         System.out.println("4. Wrap");
         int breadChoice = scanner.nextInt();
         scanner.nextLine();
-        String breadType;
+        String breadType = switch (breadChoice) {
+            case 1 -> "White";
+            case 2 -> "Wheat";
+            case 3 -> "Rye";
+            case 4 -> "Wrap";
+            default -> "White"; // using the default to choose white if invalid choice is Made
 
-        switch (breadChoice) {
-            case 1:
-                breadType = "White";
-                break;
-            case 2:
-                breadType = "Wheat";
-                break;
-            case 3:
-                breadType = "Rye";
-                break;
-            case 4:
-                breadType = "Wrap";
-                break;
-            default:
-                breadType = "White"; // using the default to choose white if invalid choice is Made
-
-        }
+        };
 
         //To Choose the sandwich size
         System.out.println("Select sandwich size: ");
@@ -125,23 +114,15 @@ public class Sandwich implements Product{
         System.out.println("M 8\"");
         System.out.println("L 12\"");
         char sizeChoice = scanner.next().toUpperCase().charAt(0);
-        char sandwichSize;
+        char sandwichSize = switch (sizeChoice) {
+            case 'L' -> 12;
+            case 'M' -> 8;
+            case 'S' -> 4;
+            default -> 8;
+            // using the default to choose 8" if an invalid choice is made
 
-        switch (sizeChoice) {
-            case 'L':
-                sandwichSize = 12;
-                break;
-            case 'M':
-                sandwichSize = 8;
-                break;
-            case 'S':
-                sandwichSize = 4;
-                break;
-            default:
-                sandwichSize = 8;
-                // using the default to choose 8" if an invalid choice is made
+        };
 
-        }
         scanner.nextLine(); //only to consume the newline character
 
         //ASK FOR MEAT CHOICE

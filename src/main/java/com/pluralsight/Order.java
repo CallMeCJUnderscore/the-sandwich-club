@@ -81,6 +81,7 @@ public class Order {
         System.out.println("2. M (8\")");
         System.out.println("3. L (12\")");
         int sizeChoice = scanner.nextInt();
+        scanner.nextLine();
         char sandwichSize;
 
         sandwichSize = switch (sizeChoice) {

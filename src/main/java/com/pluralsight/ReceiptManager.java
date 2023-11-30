@@ -54,66 +54,66 @@ public class ReceiptManager {
 
                     for(Topping topping : sandwich.getToppings()){
                         if(topping instanceof PremiumTopping premiumTopping){
-                            output = String.format("%n\t\t%s", premiumTopping.getName());
+                            output = String.format("%n\t%s", premiumTopping.getName());
                             bufferedWriter.write(output);
                         }
                     }
 
                     switch (sandwich.getExtraMeat()) {
                         case 'S' -> {
-                            output = "\n\t\tExtra Steak";
+                            output = "\n\tExtra Steak";
                             bufferedWriter.write(output);
                         }
                         case 'H' -> {
-                            output = "\n\t\tExtra Ham";
+                            output = "\n\tExtra Ham";
                             bufferedWriter.write(output);
                         }
                         case 'A' -> {
-                            output = "\n\t\tExtra Salami";
+                            output = "\n\tExtra Salami";
                             bufferedWriter.write(output);
                         }
                         case 'R' -> {
-                            output = "\n\t\tExtra Roast Beef";
+                            output = "\n\tExtra Roast Beef";
                             bufferedWriter.write(output);
                         }
                         case 'C' -> {
-                            output = "\n\t\tExtra Chicken";
+                            output = "\n\tExtra Chicken";
                             bufferedWriter.write(output);
                         }
                         case 'B' -> {
-                            output = "\n\t\tExtra Bacon";
+                            output = "\n\tExtra Bacon";
                             bufferedWriter.write(output);
                         }
                     }
 
                     switch (sandwich.getExtraCheese()) {
                             case 'A' -> {
-                                output = "\n\t\tExtra American";
+                                output = "\n\tExtra American";
                                 bufferedWriter.write(output);
                             }
                             case 'P' -> {
-                                output = "\n\t\tExtra Provolone";
+                                output = "\n\tExtra Provolone";
                                 bufferedWriter.write(output);
                             }
                             case 'C' -> {
-                                output = "\n\t\tExtra Cheddar";
+                                output = "\n\tExtra Cheddar";
                                 bufferedWriter.write(output);
                             }
                             case 'S' -> {
-                                output = "\n\t\tExtra Swiss";
+                                output = "\n\tExtra Swiss";
                                 bufferedWriter.write(output);
                             }
                     }
 
                     for(Topping topping : sandwich.getToppings()){
                         if(topping instanceof RegularTopping regularTopping){
-                            output = String.format("%n\t\t%s", regularTopping.getName());
+                            output = String.format("%n\t%s", regularTopping.getName());
                             bufferedWriter.write(output);
                         }
                     }
                     for(Topping topping : sandwich.getToppings()){
                         if(topping instanceof Sauce sauce){
-                            output = String.format("%n\t\t%s", sauce.getName());
+                            output = String.format("%n\t%s", sauce.getName());
                             bufferedWriter.write(output);
                         }
                     }
