@@ -7,8 +7,9 @@ public class Sauce extends Topping{
 
     /*--------------CONSTRUCTORS-------------*/
 
-
-
+    public Sauce(String name) {
+        super(name);
+    }
     /*------------GETTERS/SETTERS------------*/
 
 

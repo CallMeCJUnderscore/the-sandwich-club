@@ -8,7 +8,9 @@ public class RegularTopping extends Topping{
 
     /*--------------CONSTRUCTORS-------------*/
 
-
+    public RegularTopping(String name) {
+        super(name);
+    }
 
     /*------------GETTERS/SETTERS------------*/
 

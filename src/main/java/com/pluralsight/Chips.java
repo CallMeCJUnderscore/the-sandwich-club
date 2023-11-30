@@ -8,11 +8,6 @@ public class Chips implements Product{
     /*--------------CONSTRUCTORS-------------*/
 
     public Chips(String flavor) {
-      Flavors:
-//    Classic
-//    Honey BBQ
-//    Salt & Vinegar
-//    Sour Cream & Onion
         this.flavor = flavor;
     }
 
@@ -26,9 +21,6 @@ public class Chips implements Product{
         return flavor;
     }
 
-    public void setFlavor(String flavor) {
-        this.flavor = flavor;
-    }
 
     /*---------------FUNCTIONS---------------*/
 

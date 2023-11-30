@@ -31,17 +31,10 @@ public class Program {
             } else {
                 System.out.println("Invalid option");
 
-                //Order Menu
-                public static void displayMenu () {
-                    System.out.println("The Sandwich Club Order Menu:");
-
-                    System.out.println("1. Sandwich");
-                    System.out.println("2. Drink");
-                    System.out.println("3. Chips");
-                    System.out.println("4. Checkout");
-                    System.out.println("5. Quit");
-                    System.out.println("6. Go Back"); // Option to go back
-                    System.out.print("Select an option: ");
+                Scanner scanner = new Scanner(System.in);
+                boolean quit = false;
+                ReceiptManager receiptManager = new ReceiptManager();
+                Order order = new Order();
 
 
                     Scanner scanner = new Scanner(System.in);
@@ -55,32 +48,19 @@ public class Program {
                         scanner.nextLine(); //  newline character
                         Product item;
 
-                        switch (choice) {
-                            case 1:
-                                order = new Order();
-                                break;
-                            case 2:
-                                item = Drink.order();
-                                break;
-                            case 3:
-                                item = Chips.order();
-                                break;
-                            case 4:
-                                receiptManager.saveReceipt(order, order.getPrice());
-                                break;
-                            case 5:
-                                quit = true;
-                                System.out.println("Program terminated.");
-                                break;
-                            case 6:
-                                System.out.println("I am outside");
-                                displayMainMenu();
-                                return;
-
-                            default:
-                                System.out.println("Invalid choice. Please select again.");
-                                break;
+                    switch (choice) {
+                        case 1 -> order.orderSandwich(scanner);
+                        case 2 -> order.orderDrink(scanner);
+                        case 3 -> order.orderChips(scanner);
+                        case 4 -> {
+                            checkout(order, receiptManager);
+                            order = new Order();
                         }
+                        case 5 -> {
+                            quit = true;
+                            System.out.println("Program terminated.");
+                        }
+                        default -> System.out.println("Invalid choice. Please select again.");
                     }
                     scanner.close();
                 }
@@ -91,4 +71,48 @@ public class Program {
 
                 }
             }
+
+
+    private static void displayMenu() {
+        System.out.println("Order Menu:");
+        System.out.println("1. Sandwich");
+        System.out.println("2. Drink");
+        System.out.println("3. Chips");
+        System.out.println("4. Checkout");
+        System.out.println("5. Quit");
+        System.out.print("Select an option: ");
+    }
+
+
+    private static void displayHeader() {
+        System.out.println("""
+                     _____ _          ___               _        _    _       ___ _      _   \s
+                    |_   _| |_  ___  / __| __ _ _ _  __| |_ __ _(_)__| |_    / __| |_  _| |__\s
+                      | | | ' \\/ -_) \\__ \\/ _` | ' \\/ _` \\ V  V / / _| ' \\  | (__| | || | '_ \\
+                      |_| |_||_\\___| |___/\\__,_|_||_\\__,_|\\_/\\_/|_\\__|_||_|  \\___|_|\\_,_|_.__/""");
+            }
+
+    public static void checkout(Order order, ReceiptManager receiptManager) {
+        double total = 0.0;
+        Scanner scanner = new Scanner(System.in);
+        for (Sandwich sandwich : order.getOrderedSandwiches()) {
+            total += sandwich.getPrice();
+        }
+        for (Drink drink : order.getOrderedDrinks()) {
+            total += drink.getPrice();
+        }
+        for (Chips chip : order.getOrderedChips()) {
+            total += chip.getPrice();
+        }
+        System.out.printf("The total for the order is $%.2f.", total);
+        System.out.print("\nDo you agree to this price? (Y/N) ");
+        char command = scanner.nextLine().toUpperCase().charAt(0);
+        if (command == 'Y') {
+            System.out.println("Thank you! Creating receipt...");
+            receiptManager.saveReceipt(order, total);
+        }
+    }
+
+
+    }
 
