@@ -19,41 +19,25 @@ public class Order {
         this.orderedChips = new ArrayList<>();
     }
 
-
-
     /*------------GETTERS/SETTERS------------*/
 
     public List<Sandwich> getOrderedSandwiches() {
         return orderedSandwiches;
     }
 
-    public void setOrderedSandwiches(List<Sandwich> orderedSandwiches) {
-        this.orderedSandwiches = orderedSandwiches;
-    }
 
     public List<Drink> getOrderedDrinks() {
         return orderedDrinks;
     }
 
-    public void setOrderedDrinks(List<Drink> orderedDrinks) {
-        this.orderedDrinks = orderedDrinks;
-    }
 
     public List<Chips> getOrderedChips() {
         return orderedChips;
     }
 
-    public void setOrderedChips(List<Chips> orderedChips) {
-        this.orderedChips = orderedChips;
-    }
 
     /*---------------FUNCTIONS---------------*/
 
-    public void createSandwich(Scanner scanner) {    /*DELETE THIS*/
-        //createSandwich
-        System.out.println("\nCreating a new sandwich: ");
-
-    }
 
     public void orderSandwich(Scanner scanner) {
         List<Topping> toppings = new ArrayList<>();

@@ -18,5 +18,5 @@ public class PremiumTopping extends Topping{
 
     public double getPrice() {
         return super.getPrice();
-    } //THIS ONE NEEDS MORE WORK DONE ON IT
+    }
 }

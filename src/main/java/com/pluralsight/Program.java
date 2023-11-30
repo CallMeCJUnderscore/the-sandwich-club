@@ -51,24 +51,6 @@ public class Program {
         System.out.print("Select an option: ");
     }
 
-    // Implement methods for creating sandwich, drink, chips, and generating receipt
-    // Implement the goBack() method to handle going back in the application flow
-
-
-/*    private static void saveReceipt() {       NOT NEEDED
-
-    }*/
-
-    private static void createChips() {
-    }
-
-    private static void createDrink() {
-
-    }
-
-    private static void createSandwich() {
-
-    }
 
     private static void displayHeader() {
         System.out.println("""
