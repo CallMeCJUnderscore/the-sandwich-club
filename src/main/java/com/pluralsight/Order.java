@@ -55,8 +55,7 @@ public class Order {
 
     }
 
-    public void orderSandwich() {
-        Scanner scanner = new Scanner(System.in);
+    public void orderSandwich(Scanner scanner) {
         List<Topping> toppings = new ArrayList<>();
 
 
@@ -243,39 +242,50 @@ public class Order {
         orderedSandwiches.add(new Sandwich(sandwichSize,breadType,  toasted, extraMeat, extraCheese, toppings));
     }
 
-    public void orderDrink() {
-        Scanner scanner = new Scanner(System.in);
+    public void orderDrink(Scanner scanner) {
         System.out.println("Select Drink Size");
         System.out.println("S. Small ");
         System.out.println("M. Medium ");
         System.out.println("L. Large ");
-        char sizeChoice = scanner.next().toUpperCase().charAt(0);
-        //MAKE SURE THE DRINK GETS CREATED WITH CAPITAL LETTERS FOR SIZE
+        char drinkSize = scanner.nextLine().toUpperCase().charAt(0);
+        if(drinkSize != 'S' && drinkSize != 'M' && drinkSize != 'L'){drinkSize='M';}
 
-               /* Drink newDrink = new Drink();
 
-                switch (sizeChoice) {
-                    case 'S':
-                        newDrink.setSize(DrinkSize.SMALL);
-                        break;
-                    case 'M':
-                        newDrink.setSize(DrinkSize.SMALL);
-                        break;
-                    case 'L':
-                        newDrink.setSize(DrinkSize.LARGE);
-                        break;
-                    default:
-                        newDrink.setSize(DrinkSize.MEDIUM);
-                        break;
-                }
-                return new Drink();*/
+        System.out.println("Please select a drink flavor:");
+        System.out.println("1. Cola");
+        System.out.println("2. Diet Cola");
+        System.out.println("3. Ginger Ale");
+        System.out.println("4. Lemonade");
+        System.out.println("5. Water");
+        int flavorChoice = scanner.nextInt();
+        scanner.nextLine();
 
-        //Prompt for flavor, then add Drink object to orderedDrinks
+        String drinkFlavor = switch (flavorChoice) {
+            case 1 -> "Cola";
+            case 2 -> "Diet Cola";
+            case 3 -> "Ginger Ale";
+            case 4 -> "Lemonade";
+            default -> "Water";
+        };
+        orderedDrinks.add(new Drink(drinkSize, drinkFlavor));
     }
 
-    public void orderChips() {
-        //Prompt for flavor, then add Chip object to orderedChips
+    public void orderChips(Scanner scanner) {
+        System.out.println("Please select a drink flavor:");
+        System.out.println("1. Classic");
+        System.out.println("2. Honey BBQ");
+        System.out.println("3. Sour Cream & Onion");
+        System.out.println("4. Salt & Vinegar");
+        int flavorChoice = scanner.nextInt();
 
+        String chipFlavor = switch (flavorChoice) {
+            case 1 -> "Classic";
+            case 2 -> "Honey BBQ";
+            case 3 -> "Sour Cream & Onion";
+            default -> "Salt & Vinegar";
+        };
+
+        orderedChips.add(new Chips(chipFlavor));
     }
 
 
