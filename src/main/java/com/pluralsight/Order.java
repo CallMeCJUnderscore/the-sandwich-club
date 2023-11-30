@@ -6,13 +6,9 @@ import java.util.Scanner;
 
 public class Order {
     /*---------------VARIABLES---------------*/
-
     List<Product> orderItems = new ArrayList<Product>();
-
-
-
-
-
+    public Order() {
+    }
 
     /*------------GETTERS/SETTERS------------*/
 
@@ -32,21 +28,9 @@ public class Order {
         public void orderedDrinks() {
     }
 
-        /* CHECK 1. Ask for meat choice
-        CHECK 2. Ask for extra meat
-        CHECK 3. Ask for cheese
-       CHECK  4. Ask for extra cheese
-
-
-        Repeat for regular toppings, then sauces/au jus
-
-        Finally, add to orderedSandwiches*/
-
-        //REMEMBER THE CLASS DIAGRAM
 
     public void orderedChips() {
-            Scanner scanner = new Scanner(System.in);
-
+        new Scanner(System.in);
     }
 
 
