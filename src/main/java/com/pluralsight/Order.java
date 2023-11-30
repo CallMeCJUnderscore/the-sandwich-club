@@ -21,8 +21,8 @@ public class Order {
 
     /*------------GETTERS/SETTERS------------*/
 
-    public List<Sandwich> getOrderedSandwiches() {
-        return orderedSandwiches;
+    public List<Product> getOrderItems() {
+        return orderItems;
     }
 
 

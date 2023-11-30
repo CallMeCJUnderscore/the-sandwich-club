@@ -20,6 +20,7 @@ public abstract class Topping implements Product{
 
     /*---------------FUNCTIONS---------------*/
 
+
     @Override
     public double getPrice() {
         return 0;

@@ -5,9 +5,31 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
+import static com.pluralsight.Sandwich.order;
+
 public class Program {
+    public Program() {
+    }
     public static void main(String[] args) {
-        // Existing imports and code...
+        displayMainMenu();
+        displayMenu();
+    }
+    //Main Menu
+    public static void displayMainMenu() {
+        System.out.println("Press 1 for New Order");
+        System.out.println("Press 2 for quit");
+        Scanner scanner = new Scanner(System.in);
+        boolean condition = true;
+        while (condition == true) {
+            int option = scanner.nextInt();
+            if (option == 1) {
+                displayMenu();
+                condition = false;
+            } else if (option == 2) {
+                System.out.println("Quiting now, Thank you!");
+                condition = false;
+            } else {
+                System.out.println("Invalid option");
 
                 Scanner scanner = new Scanner(System.in);
                 boolean quit = false;
@@ -15,12 +37,16 @@ public class Program {
                 Order order = new Order();
 
 
-                while (!quit) {
-                    displayHeader();
-                    displayMenu();
+                    Scanner scanner = new Scanner(System.in);
+                    boolean quit = false;
+                    ;
 
-                    int choice = scanner.nextInt();
-                    scanner.nextLine(); //  newline character
+                    Order order = new Order();
+                    ReceiptManager receiptManager = new ReceiptManager()
+                    while (!quit) {
+                        int choice = scanner.nextInt();
+                        scanner.nextLine(); //  newline character
+                        Product item;
 
                     switch (choice) {
                         case 1 -> order.orderSandwich(scanner);
@@ -36,8 +62,14 @@ public class Program {
                         }
                         default -> System.out.println("Invalid choice. Please select again.");
                     }
+                    scanner.close();
                 }
-                scanner.close();
+
+
+                private static void goBack () {
+                    System.out.println("Going back to the previous menu...");
+
+                }
             }
 
 

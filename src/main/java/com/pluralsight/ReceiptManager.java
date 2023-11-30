@@ -22,7 +22,7 @@ public class ReceiptManager {
 
     /*---------------FUNCTIONS---------------*/
 
-    public void saveReceipt (Order order, double total){
+    public void saveReceipt (Product order, double total){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
         LocalDateTime localDateTime = LocalDateTime.now();
         String fileName = "receipts/"+localDateTime.format(formatter) + ".txt";

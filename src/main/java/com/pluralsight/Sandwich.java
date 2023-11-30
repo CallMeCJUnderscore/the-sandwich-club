@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Sandwich implements Product{
 
@@ -22,6 +23,10 @@ public class Sandwich implements Product{
         this.extraMeat = extraMeat;
         this.extraCheese = extraCheese;
         this.toppings = toppings;
+    }
+
+    public Sandwich(String breadType, char sandwichSize, double totalPrice,
+                    char[] selectedMeats, char[] selectedCheeses, List<Topping> selectedOtherToppings, Object selectedSauces, boolean isToasted, boolean hasExtraCheese, double extraCheeseCost) {
     }
 
 
@@ -122,3 +127,4 @@ public class Sandwich implements Product{
     }
 
 }
+
