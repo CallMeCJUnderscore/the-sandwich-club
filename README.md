@@ -23,7 +23,7 @@ This Java-based application is a sandwich ordering system that allows customers 
 
 ## Class Diagram
 ### This Class Diagram features: Classes, Attributes,and Inheritance.
-![Class Diagram](https://i.ibb.co/g45xrRv/The-Sandwich-Club-Class-Diagram-Page-1.png)
+![Class Diagram](https://github.com/user-attachments/assets/2d2642fe-7b00-427a-81a7-f29f3b18dd2b)
 
 
 ## To get started with The Sandwich Club, follow these steps:
